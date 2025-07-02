@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="{% static 'shop/css/header.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        {% for elem in header_menu %}
+            {% if not forloop.last %}
+                <h3 class="header-path"><a href="{% url elem.url_name %}">{{ elem.title }}</a></h3>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <div class="footer">
+
+    </div>
+</body>
+</html>
