@@ -5,21 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link type="text/css" href="{% static 'shop/css/base.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'shop/css/header.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'shop/css/footer.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
+    <header>
         {% for elem in header_menu %}
             {% if not forloop.last %}
-                <h3 class="header-path"><a href="{% url elem.url_name %}">{{ elem.title }}</a></h3>
+                <a class="ref-like-text header-elems" href="{% url elem.url_name %}">{{ elem.title }}</a>
             {% endif %}
         {% endfor %}
-    </div>
+    </header>
 
-    {% block content %}{% endblock %}
 
-    <div class="footer">
-
-    </div>
+    <footer></footer>
 </body>
 </html>
